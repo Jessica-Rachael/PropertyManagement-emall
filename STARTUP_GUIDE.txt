@@ -1,0 +1,235 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                  RENTAL MANAGEMENT SYSTEM - STARTUP GUIDE                   ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+🚀 TWO AUTOMATED PYTHON SCRIPTS CREATED:
+
+1. setup_database.py  ← Run THIS FIRST (one-time setup)
+2. run.py            ← Run THIS to launch application
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 SETUP PROCESS (First Time Only)
+═════════════════════════════════════════════════════════════════════════════
+
+COMMAND:
+  python setup_database.py
+
+WHAT IT DOES:
+  ✓ Checks if MySQL is installed
+  ✓ Asks for your MySQL password
+  ✓ Creates database: rental_management_system
+  ✓ Creates 7 tables (schema)
+  ✓ Loads 37+ sample records
+  ✓ Adds views, triggers, procedures
+  ✓ Optionally launches the GUI
+
+OUTPUT:
+  ✓ Checking MySQL installation
+  ✓ MySQL found: mysql 8.0.x
+  ✓ schema.sql executed successfully
+  ✓ sample_data.sql executed successfully
+  ✓ views_triggers_sprocs.sql executed successfully
+  ✓ DATABASE SETUP COMPLETE!
+
+Then it asks: "Would you like to launch the application now? (y/n)"
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🏃 RUN APPLICATION (Everyday)
+═════════════════════════════════════════════════════════════════════════════
+
+COMMAND:
+  python run.py
+
+WHAT IT DOES:
+  ✓ Checks if all Python packages installed
+  ✓ Checks database connection
+  ✓ Launches GUI application
+  ✓ Shows any errors
+
+OUTPUT:
+  Checking dependencies...
+  ✓ mysql-connector-python installed
+  ✓ tkinter available
+  
+  Checking database connection...
+  ✓ Database connected
+  ✓ Found 5 landlords
+  
+  Launching Rental Management System...
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 QUICK START STEPS
+═════════════════════════════════════════════════════════════════════════════
+
+1. INSTALL PYTHON PACKAGE (one-time):
+   pip install mysql-connector-python
+
+2. SETUP DATABASE (one-time):
+   python setup_database.py
+   
+   Follow prompts:
+   - Enter MySQL password (or press Enter)
+   - Wait for setup to complete (1-2 minutes)
+   - Press 'y' to launch GUI
+
+3. RUN APPLICATION (every time):
+   python run.py
+   
+   GUI opens automatically!
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✨ FEATURES OF AUTOMATION SCRIPTS
+═════════════════════════════════════════════════════════════════════════════
+
+setup_database.py:
+  ✓ Automatic MySQL detection
+  ✓ Secure password input (hidden)
+  ✓ Error handling with clear messages
+  ✓ Color-coded output (green/red/yellow)
+  ✓ Progress indicators
+  ✓ Optional GUI launch after setup
+  ✓ Detailed error reporting
+
+run.py:
+  ✓ Dependency checker
+  ✓ Database connection validator
+  ✓ Helpful error messages
+  ✓ Color-coded status
+  ✓ Automatic GUI launch
+  ✓ Graceful error handling
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+❓ TROUBLESHOOTING
+═════════════════════════════════════════════════════════════════════════════
+
+Problem: "MySQL command not found"
+Solution: 
+  - Install MySQL: choco install mysql --limit-output
+  - Or add MySQL to PATH manually
+
+Problem: "Access denied for user 'root'@'localhost'"
+Solution:
+  - Run setup_database.py again
+  - Enter correct MySQL password when prompted
+  - Or check if MySQL is running: net start MySQL80
+
+Problem: "Unknown database 'rental_management_system'"
+Solution:
+  - Delete previous database (if any): DROP DATABASE rental_management_system;
+  - Run setup_database.py again
+
+Problem: "mysql-connector-python not installed"
+Solution:
+  - Run: pip install mysql-connector-python
+  - Then run: python run.py
+
+Problem: "GUI won't start"
+Solution:
+  - Check error message in console
+  - Make sure database is running
+  - Try: python run.py (for detailed error)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📁 FILES IN RENTAL_SYSTEM FOLDER
+═════════════════════════════════════════════════════════════════════════════
+
+PRIMARY STARTUP FILES:
+  🔥 setup_database.py    ← Database setup script
+  🔥 run.py               ← Application launcher
+  
+SUPPORTING FILES:
+  src/gui.py              (GUI code - used by run.py)
+  src/database.py         (Database code - used by run.py)
+  database/*.sql          (SQL files - used by setup_database.py)
+  
+DOCUMENTATION:
+  QUICKSTART.md           (Quick reference)
+  README.md               (Full documentation)
+  ER_DIAGRAM.txt          (Database design)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+⚡ WORKFLOW
+═════════════════════════════════════════════════════════════════════════════
+
+FIRST TIME:
+  $ python setup_database.py
+  [Enter password when prompted]
+  [Wait for setup...]
+  [Choose to launch GUI: y]
+  [GUI opens!]
+
+NEXT TIME:
+  $ python run.py
+  [Checks everything]
+  [GUI opens automatically!]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ WHAT HAPPENS BY DEFAULT
+═════════════════════════════════════════════════════════════════════════════
+
+setup_database.py:
+  1. Detects MySQL installation
+  2. Asks for root password securely
+  3. Runs schema.sql → Creates tables
+  4. Runs sample_data.sql → Adds 37+ records
+  5. Runs views_triggers_sprocs.sql → Adds View, Trigger, Procedure
+  6. Displays success message
+  7. Optionally launches GUI
+
+run.py:
+  1. Checks mysql-connector-python installed
+  2. Checks tkinter available
+  3. Connects to database
+  4. Verifies tables exist
+  5. Launches GUI
+  6. Shows any errors clearly
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎨 COLORS IN OUTPUT
+═════════════════════════════════════════════════════════════════════════════
+
+Green (✓)  → Success/Complete
+Red (✗)    → Errors/Problems
+Yellow (⚠) → Warnings/Instructions
+Blue (ℹ)   → Information
+Cyan       → Headers/Titles
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📞 NEED HELP?
+═════════════════════════════════════════════════════════════════════════════
+
+1. Read error message carefully (displayed in red)
+2. Check QUICKSTART.md for common issues
+3. Review README.md for detailed guide
+4. Check console output for stack trace
+
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ READY TO GO!
+═════════════════════════════════════════════════════════════════════════════
+
+Next step: Run setup
+  python setup_database.py
+
+That's it! Everything else is automated.
